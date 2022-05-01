@@ -17,7 +17,7 @@ export default (shouldFocus, callback) => {
       if (!granted) {
         throw new Error("Location permission not granted");
       }
-      const subscriber = await watchPositionAsync(
+      const sub = await watchPositionAsync(
         {
           accuracy: Accuracy.BestForNavigation,
           timeInterval: 1000,
@@ -27,7 +27,7 @@ export default (shouldFocus, callback) => {
           callback(location);
         }
       );
-      setSub(sub);
+      setSubscriber(sub);
     } catch (e) {
       setErr(e);
     }

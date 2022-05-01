@@ -22,13 +22,13 @@ const Map = () => {
       }}
       region={{
         ...currentLocation.coords,
-        latitudeDelta: 0.003,
-        longitudeDelta: 0.003,
+        latitudeDelta: 0.1,
+        longitudeDelta: 0.1,
       }}
     >
       <Circle
         center={currentLocation.coords}
-        radius={10}
+        radius={1000}
         strokeColor="rgba(158, 158, 255, 1.0)"
         fillColor="rgba(158, 158, 255, 0.3)"
       />

@@ -1,8 +1,9 @@
-import React, { useReducer } from 'react';
+import React, { useReducer } from "react";
 
 export default (reducer, actions, defaultValue) => {
   const Context = React.createContext();
 
+  // You need to destructure because children: component
   const Provider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, defaultValue);
 
